@@ -39,7 +39,7 @@ def load_def_file(path):
     """
     Prebere eno datoteko z deformacijami.
     Pricakovan vhod: Lokacija datoteke z njenim imenom.
-    Izhod: Slovar, ki ima za kljuc koordinate in shrani velikost deformacije.
+    Izhod: Slovar, ki ima za kljuc kvantizirane trojke integerjev in shrani velikost deformacije.
     """
     d = {}
     with open(path, encoding="utf-8") as f:
@@ -192,4 +192,5 @@ if add_keyframes:
 
 
 print("Done — play the Timeline to see the deformation!")
+
 
