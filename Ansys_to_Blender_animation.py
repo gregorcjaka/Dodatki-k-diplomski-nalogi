@@ -6,7 +6,7 @@ Skripta predvideva, da imamo v osnovnem direktoriju obe .csv datoteki in v njem 
 Imena datotek s smernimi deformacijami morajo biti oblikovana kot "DirDeform_{koordinata}_T{korak}.txt".
 """
 
-# 0) Začetne nastavitve
+# 0) Zacetne nastavitve
 from pathlib import Path
 import bpy, re, numpy as np
 from bpy import context
@@ -192,3 +192,4 @@ if add_keyframes:
 
 
 print("Done — play the Timeline to see the deformation!")
+
