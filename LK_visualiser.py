@@ -118,7 +118,7 @@ def on_mouse(event, x, y, flags, param):
         draw_overlay()
 
 # Poklicemo funkcije za risanje tock in klikanje
-win_name = "Click beam corners - ENTER when done | Backspace=undo | r=reset"
+win_name = "Select points - ENTER when done | Backspace=undo | r=reset"
 cv2.namedWindow(win_name, cv2.WINDOW_NORMAL)
 cv2.setMouseCallback(win_name, on_mouse)
 draw_overlay()
@@ -216,3 +216,4 @@ if csv_out:
     print(f"Saved {len(trajectory_rows)} rows to {csv_out}")
 
 print("Done.")
+
