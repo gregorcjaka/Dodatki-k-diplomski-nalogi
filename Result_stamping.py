@@ -17,7 +17,7 @@ import bpy, csv, mathutils
 txt_path = r"C:\Location\to\Stress_results.txt"  # Lokacija do .txt datoteke
 object = "object_name"                           # Objekt z dodanim kljucem oblike
 field = "result_header_name"                     # Ime rezultatov
-scale = 1.0                                      # Ce so enote v metrih, pustim na 1
+scale = 1.0                                      # Ce so enote v metrih, pusti na 1
 num_neighbours = 9                               # Stevilo uporabljenih sosedov za glajenje
 
 def str2f(s): return float(s.replace(',', '.'))
@@ -84,3 +84,4 @@ mesh.update()
 print("Result value min:", min(nodes_val))      # Dobimo se informacijo o min in max resitvi
 print("Result value max:", max(nodes_val))
 print(f"Stamped stress on {len(mesh.vertices):,} of {len(mesh.vertices):,} vertices.")
+
