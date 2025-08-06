@@ -23,8 +23,8 @@ num_neighbours = 9                               # Stevilo uporabljenih sosedov 
 def str2f(s): return float(s.replace(',', '.'))
 
 # 1) Preberemo datoteko z rezultati, sestavimo mathutils vektor, shranimo napetost v nodes_val
-nodes_co   = []
-nodes_val  = []
+nodes_co = []
+nodes_val = []
 
 with open(txt_path, encoding="utf-8", newline='') as f:
     # Spustimo vse vrstice s komentarji
@@ -84,4 +84,5 @@ mesh.update()
 print("Result value min:", min(nodes_val))      # Dobimo se informacijo o min in max resitvi
 print("Result value max:", max(nodes_val))
 print(f"Stamped stress on {len(mesh.vertices):,} of {len(mesh.vertices):,} vertices.")
+
 
