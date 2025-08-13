@@ -34,12 +34,14 @@ print(f"Loaded  {len(verts):,} vertices and {len(faces):,} faces")
 # 2) Naredimo mrezo
 mesh = bpy.data.meshes.new("BeamMesh")
 mesh.from_pydata(verts, [], faces)
-mesh.validate(verbose=True)
+mesh.validate(verbose=True)    # Isce potencialne napake
 mesh.update(calc_edges=True)
 
+# 3) Naredimo objekt iz mreze ter ga dodamo v zbirko
 obj = bpy.data.objects.new("Beam", mesh)
 context.collection.objects.link(obj)
 context.view_layer.objects.active = obj
 obj.select_set(True)
 
 print("Undeformed beam imported")
+
