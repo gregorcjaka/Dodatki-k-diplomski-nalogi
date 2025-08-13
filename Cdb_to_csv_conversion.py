@@ -43,9 +43,8 @@ out_dir = cdb_path.parent
 vfile   = out_dir / "beam_vertices.csv"
 ffile   = out_dir / "beam_faces.csv"
 
-np.savetxt(vfile, verts, delimiter=",",
-           header="x,y,z", comments="")
-np.savetxt(ffile, faces, delimiter=",",
-           header="v1,v2,v3", fmt="%d", comments="")
+np.savetxt(vfile, verts, delimiter=",", header="x,y,z", comments="")
+np.savetxt(ffile, faces, delimiter=",", header="v1,v2,v3", fmt="%d", comments="")
 
 print(f"CSVs written:\n   {vfile}\n   {ffile}")
+
