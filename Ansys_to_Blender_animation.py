@@ -102,7 +102,8 @@ print(f"Loaded {len(verts):,} verts | {len(faces):,} faces")
 
 mesh = bpy.data.meshes.new("BeamMesh")
 mesh.from_pydata(verts.tolist(), [], faces.tolist())
-mesh.validate(); mesh.update()
+mesh.validate() 
+mesh.update()
 
 obj = bpy.data.objects.new("Beam", mesh)
 context.collection.objects.link(obj)
@@ -192,5 +193,6 @@ if add_keyframes:
 
 
 print("Done — play the Timeline to see the deformation!")
+
 
 
