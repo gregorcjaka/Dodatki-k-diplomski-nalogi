@@ -193,6 +193,3 @@ if add_keyframes:
 
 
 print("Done — play the Timeline to see the deformation!")
-
-
-
