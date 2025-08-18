@@ -60,8 +60,8 @@ mesh = obj.data
 world = obj.matrix_world          # V primeru, da transformacije niso potrjene
 
 # Ustvarimo verteks sloj (oz. ga pridobimo, ce je ta ze ustvarjen)
-layer = mesh.color_attributes.get(field) \
-        or mesh.color_attributes.new(field, type='FLOAT_COLOR', domain='POINT')
+layer = mesh.attributes.get(field) \
+        or mesh.attributes.new(name=field, type='FLOAT', domain='POINT')
 
 # Glavna zanka
 for v in mesh.vertices:
@@ -78,12 +78,13 @@ for v in mesh.vertices:
         val_den += w
 
     val = val_num / val_den             # Utezeno povprecje
-    layer.data[v.index].color = (val, val, val, 1.0)       
+    layer.data[v.index].value = float(val)       
 mesh.update()
 
 print("Result value min:", min(nodes_val))      # Dobimo se informacijo o min in max resitvi
 print("Result value max:", max(nodes_val))
 print(f"Stamped stress on {len(mesh.vertices):,} of {len(mesh.vertices):,} vertices.")
+
 
 
 
