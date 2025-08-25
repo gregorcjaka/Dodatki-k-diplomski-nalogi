@@ -63,6 +63,7 @@ world = obj.matrix_world          # V primeru, da transformacije niso potrjene
 layer = mesh.attributes.get(field) \
         or mesh.attributes.new(name=field, type='FLOAT', domain='POINT')
 
+stamped = 0
 # Glavna zanka
 for v in mesh.vertices:
     co_world = world @ v.co
@@ -78,12 +79,14 @@ for v in mesh.vertices:
         val_den += w
 
     val = val_num / val_den             # Utezeno povprecje
-    layer.data[v.index].value = float(val)       
+    layer.data[v.index].value = float(val)   
+    stamped += 1
 mesh.update()
 
 print("Result value min:", min(nodes_val))      # Dobimo se informacijo o min in max resitvi
 print("Result value max:", max(nodes_val))
-print(f"Stamped stress on {len(mesh.vertices):,} of {len(mesh.vertices):,} vertices.")
+print(f"Stamped stress on {stamped:,} of {len(mesh.vertices):,} vertices.")
+
 
 
 
